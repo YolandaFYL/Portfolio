@@ -4,3 +4,6 @@ body {
     margin-inline: auto;
     padding: 5ch;
   }
+body > nav {
+    display: flex;
+  }
