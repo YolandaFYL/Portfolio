@@ -35,10 +35,15 @@ nav a:hover {
     background-color: oklch(from var(--color-accent) 95% 5% h);
     padding-bottom: 0.1em;
   }
-body > form {
+form input,
+form textarea,
+form button {
   font: inherit;
   display: block;
   width: 100%;
   box-sizing: border-box;
+}
+form label {
+  display: block;
   margin-block: auto;
 }
