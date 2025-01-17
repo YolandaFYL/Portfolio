@@ -2,6 +2,13 @@
     --color-accent: oklch(65% 50% 0);
     accent-color: var(--color-accent);
   }
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+h1 {
+    font-size: 150%;
+  } 
 body {
       font: 100%/1.5 system-ui;
       max-width: 100ch;
