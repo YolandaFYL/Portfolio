@@ -41,7 +41,6 @@ form {
   gap: 1em;
 }
 form > div {
-  display: grid;
   grid-template-columns: subgrid;
 }
 form input,
@@ -50,5 +49,6 @@ form button {
   font: inherit;
 }
 form label {
-  grid-column: 1/-1;
+  display: grid;
+  grid-column: 1 / -1;
 }
