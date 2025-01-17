@@ -6,6 +6,7 @@ body {
   }
 body > nav {
     display: flex;
+    margin-bottom: auto;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: oklch(80% 3% 200);
@@ -16,7 +17,6 @@ nav a {
   color: inherit;
   text-align: center;
   padding: 0.5em;
-  margin-bottom: auto;
 }
 nav a.current {
   border-bottom-width: 0.4em;
