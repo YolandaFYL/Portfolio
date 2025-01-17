@@ -37,5 +37,5 @@ nav a:hover {
   }
 div.project {
   display: grid;
-  grid-template-columns: repeat(autofill, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 }
