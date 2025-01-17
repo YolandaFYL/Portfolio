@@ -45,5 +45,5 @@ form button {
 }
 form label {
   display: block;
-  margin-block: auto;
+  margin-block: 1px 1px;
 }
