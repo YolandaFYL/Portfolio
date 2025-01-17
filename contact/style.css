@@ -37,4 +37,8 @@ nav a:hover {
   }
 body > form {
   font: inherit;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-block: auto;
 }
