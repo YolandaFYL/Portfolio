@@ -6,7 +6,7 @@ body {
   }
 body > nav {
     display: flex;
-    margin-bottom: auto;
+    margin-bottom: 1em;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: oklch(80% 3% 200);
