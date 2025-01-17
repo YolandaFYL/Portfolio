@@ -37,7 +37,12 @@ nav a:hover {
   }
 form {
   display: grid;
-  grid-template-columns: auto 1fr
+  grid-template-columns: auto 1fr；
+  gap: 1em
+}
+form > div {
+  display: grid;
+  grid-template-columns: subgrid;
 }
 form input,
 form textarea,
@@ -45,5 +50,5 @@ form button {
   font: inherit;
 }
 form label {
-  display: contents
+  grid-column: 1/-1;
 }
