@@ -7,3 +7,6 @@ body {
 body > nav {
     display: flex;
   }
+nav a {
+  flex: 1;
+}
