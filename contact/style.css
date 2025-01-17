@@ -44,3 +44,6 @@ form textarea,
 form button {
   font: inherit;
 }
+form label {
+  display: contents
+}
