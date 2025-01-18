@@ -1,82 +1,70 @@
 :root {
-    --color-accent: oklch(65% 50% 0);
-    accent-color: var(--color-accent);
-  }
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    text-wrap: balance;
-  }
-h1 {
-    font-size: 300%;
-  } 
-body {
-      font: 100%/1.5 system-ui;
-      max-width: 100ch;
-      margin-inline: auto;
-      padding: 5ch;
-    }
-.resume-wrapper {
-      max-width: 100ch;
-      margin-inline: auto;
-      background: #fff;
-      padding: 5ch;
-    }
-.contact-info {
-      text-align: right;
-      font-size: 0.9em;
-      color: #555;
-  }
-.contact-info a {
-    text-decoration: none;
+  --color-accent: oklch(65% 50% 0);
+  accent-color: var(--color-accent);
 }
-.contact-info a:hover {
-    text-decoration: underline;
-  }
-.resume-header h1 {
-      font-size: 2em;
-      margin-bottom: 5px;
-      color: #222;
-  }
-.resume-header p {
-      margin: 5px 0;
-      font-size: 0.95em;
-      color: #555;
-  }
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h1 {
+  font-size: 300%;
+}
 h2, h3 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-      color: #444;
-  }
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #444;
+}
 h4 {
-      font-size: 1.1em;
-      color: #444;
-      margin-bottom: 5px;
-  }
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 5px;
+}
+body {
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 5ch;
+}
+.resume-wrapper {
+  max-width: 100ch;
+  margin-inline: auto;
+  background: #fff;
+  padding: 5ch;
+}
+.contact-info {
+  text-align: right;
+  font-size: 0.9em;
+  color: #555;
+}
+.resume-header h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  color: #222;
+}
+.resume-header p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #555;
+}
 body > nav {
-      display: flex;
-      margin-bottom: auto;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      border-bottom-color: oklch(80% 3% 200);
-    }
+  display: flex;
+  margin-bottom: auto;
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
 nav a {
-    flex: 1;
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0.5em;
-  }
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
 nav a.current {
-    border-bottom-width: 0.4em;
-    border-bottom-style: solid;
-    border-bottom-color: oklch(80% 3% 200);
-    padding-bottom: 0.1em;
-  }
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.1em;
+}
 nav a:hover {
-    border-bottom-width: 0.4em;
-    border-bottom-style: solid;
-    border-bottom-color: var(--color-accent);
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-    padding-bottom: 0.1em;
-  }
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+  padding-bottom: 0.1em;
+}
