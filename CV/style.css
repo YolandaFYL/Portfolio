@@ -21,6 +21,7 @@ h4 {
   margin-bottom: 5px;
 }
 article h4 span.time-range {
+  text-align: right;
   font-size: 0.9em;
   color: #555;
   flex-shrink: 0;
