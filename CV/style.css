@@ -26,6 +26,9 @@ body {
       font-size: 0.9em;
       color: #555;
   }
+.contact-info a {
+    text-decoration: none;
+}
 .contact-info a:hover {
     text-decoration: underline;
   }
