@@ -15,6 +15,41 @@ body {
       margin-inline: auto;
       padding: 5ch;
     }
+.resume-wrapper {
+      max-width: 100ch;
+      margin-inline: auto;
+      background: #fff;
+      padding: 5ch;
+    }
+  .contact-info {
+      text-align: right;
+      font-size: 0.9em;
+      color: #555;
+  }
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  .resume-header h1 {
+      font-size: 2em;
+      margin-bottom: 5px;
+      color: #222;
+  }
+  .resume-header p {
+      margin: 5px 0;
+      font-size: 0.95em;
+      color: #555;
+  }
+  h2, h3 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #444;
+  }
+  h4 {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 5px;
+  }
 body > nav {
       display: flex;
       margin-bottom: auto;
