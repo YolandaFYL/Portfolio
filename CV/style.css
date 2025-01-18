@@ -33,11 +33,11 @@ body {
   padding: 5ch;
 }
 .contact-info {
-  text-align: right;
   font-size: 0.9em;
   color: #555;
 }
 .resume-header h1 {
+  text-align: center;
   font-size: 3em;
   margin-bottom: 5px;
   color: #222;
