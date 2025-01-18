@@ -20,6 +20,12 @@ h4 {
   color: #444;
   margin-bottom: 5px;
 }
+article h4 span.time-range {
+  font-size: 0.9em;
+  color: #555;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
