@@ -8,3 +8,7 @@ const navLinks = $$("nav a")
 let currentLink = navLinks.find(
   (a) => a.host === location.host && a.pathname === location.pathname
 );
+currentLink.classList.add('current');
+if (currentLink) {
+  currentLink.classList.add('current');
+}
