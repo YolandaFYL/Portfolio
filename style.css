@@ -3,7 +3,6 @@
   accent-color: var(--color-accent);
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
@@ -36,7 +35,6 @@ article h4 span.time-range {
   margin-left: 10px;
 }
 
-/* Body */
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
@@ -44,7 +42,6 @@ body {
   padding: 5ch;
 }
 
-/* Navigation */
 body > nav {
   display: flex;
   margin-bottom: auto;
@@ -70,7 +67,6 @@ nav a:hover {
   padding-bottom: 0.1em;
 }
 
-/* Forms */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -93,7 +89,6 @@ form button {
   grid-column: 1 / -1;
 }
 
-/* Projects Section */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -108,9 +103,9 @@ form button {
 
 .projects h2 {
   margin: 0;
+  border-bottom: none;
 }
 
-/* Resume Section */
 .resume-wrapper {
   max-width: 100ch;
   margin-inline: auto;
