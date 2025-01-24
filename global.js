@@ -5,10 +5,10 @@ function $$(selector, context = document) {
 }
 
 let pages = [
-  { url: 'index.html', title: 'Home' },
-  { url: 'Projects/index.html', title: 'Projects' },
-  { url: 'Resume/index.html', title: 'Resume' },
-  { url: 'Contact/index.html', title: 'Contact' },
+  { url: '', title: 'Home' },
+  { url: 'Projects/', title: 'Projects' },
+  { url: 'Resume/', title: 'Resume' },
+  { url: 'Contact/', title: 'Contact' },
   { url: 'https://github.com/YolandaFYL', title: 'Github' },
 ];
 
@@ -20,9 +20,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
-  if (!ARE_WE_HOME && !url.startsWith('http')) {
-    url = '../' + url;
-  }
+  url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
 
   let a = document.createElement('a');
   a.href = url;
