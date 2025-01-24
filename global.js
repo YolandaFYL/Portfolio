@@ -30,6 +30,6 @@ for (let p of pages) {
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');}
   if (a.host !== location.host) {
-  a.setAttribute('target', '_blank');} 
+    a.setAttribute('target', '_blank');} 
   else {a.removeAttribute('target');} 
 }
