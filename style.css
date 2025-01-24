@@ -1,6 +1,7 @@
 :root {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
+  color-scheme: light dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,10 +14,9 @@ h1 {
 }
 
 h2, h3 {
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid;
   padding-bottom: 5px;
   margin-bottom: 15px;
-  color: #444;
 }
 
 h4 {
@@ -24,13 +24,11 @@ h4 {
   justify-content: space-between;
   align-items: center;
   font-size: 1.1em;
-  color: #444;
   margin-bottom: 5px;
 }
 
 article h4 span.time-range {
   font-size: 0.9em;
-  color: #555;
   flex-shrink: 0;
   margin-left: 10px;
 }
@@ -45,7 +43,8 @@ body {
 body > nav {
   display: flex;
   margin-bottom: auto;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -57,13 +56,13 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
 }
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   padding-bottom: 0.1em;
 }
 
@@ -109,25 +108,21 @@ form button {
 .resume-wrapper {
   max-width: 100ch;
   margin-inline: auto;
-  background: #fff;
   padding: 5ch;
 }
 
 .contact-info {
   font-size: 0.9em;
-  color: #555;
 }
 
 .resume-header h1 {
   text-align: center;
   font-size: 3em;
   margin-bottom: 5px;
-  color: #222;
 }
 
 .resume-header p {
   text-align: center;
   margin: 5px 0;
   font-size: 0.95em;
-  color: #555;
 }
