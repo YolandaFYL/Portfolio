@@ -48,10 +48,25 @@ document.body.insertAdjacentHTML(
 const select = document.querySelector('.color-scheme select');
   select.addEventListener('input', function (event) {
     const selectedScheme = event.target.value;
-    if (selectedScheme === 'auto') {
-      document.documentElement.style.removeProperty('color-scheme');
-    } else {
-      document.documentElement.style.setProperty('color-scheme', selectedScheme);
-    }
+    
     console.log('Color scheme changed to', selectedScheme);
   });
+  
+function setColorScheme(colorScheme) {
+  if (colorScheme === 'auto') {
+    document.documentElement.style.removeProperty('color-scheme');} 
+    else {document.documentElement.style.setProperty('color-scheme', colorScheme);}
+  }
+
+if ("colorScheme" in localStorage) {
+  const savedScheme = localStorage.colorScheme;
+  setColorScheme(savedScheme);
+  select.value = savedScheme;
+}
+
+select.addEventListener('input', function (event) {
+  const selectedScheme = event.target.value;
+  setColorScheme(selectedScheme);
+  localStorage.colorScheme = selectedScheme;
+  console.log('Color scheme changed to', selectedScheme);
+});
