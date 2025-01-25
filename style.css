@@ -126,3 +126,17 @@ form button {
   margin: 5px 0;
   font-size: 0.95em;
 }
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+  text-align: center;
+  text-align-last: center;
+}
+
+.color-scheme select {
+  font-family: inherit;
+}

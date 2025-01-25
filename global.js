@@ -30,3 +30,28 @@ for (let p of pages) {
     else {a.removeAttribute('target');} 
   nav.append(a);
 }
+
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+    Theme:
+    <select id="theme-selector">
+      <option value="auto">Automatic</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  `
+);
+
+const select = document.querySelector('.color-scheme select');
+  select.addEventListener('input', function (event) {
+    const selectedScheme = event.target.value;
+    if (selectedScheme === 'auto') {
+      document.documentElement.style.removeProperty('color-scheme');
+    } else {
+      document.documentElement.style.setProperty('color-scheme', selectedScheme);
+    }
+    console.log('Color scheme changed to', selectedScheme);
+  });
