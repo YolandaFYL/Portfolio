@@ -83,3 +83,28 @@ export async function fetchJSON(url) {
       console.error('Error fetching or parsing JSON data:', error);
   }
 }
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  if (!containerElement || !(containerElement instanceof HTMLElement)) {
+    console.error("Invalid container element provided.");
+    return;
+  }
+  if (!/^h[1-6]$/.test(headingLevel)) {
+    console.warn(`Invalid heading level "${headingLevel}". Defaulting to "h2".`);
+    headingLevel = 'h2';
+  }
+
+  containerElement.innerHTML = '';
+  project.forEach(project => {
+    const article = document.createElement('article');
+    const title = project.title || 'Untitled Project';
+    const imageSrc = project.image || 'default-image.jpg'; // Replace with a placeholder image
+    const description = project.description || 'No description available.';
+    article.innerHTML = `
+      <${headingLevel}>${title}</${headingLevel}>
+      <img src="${imageSrc}" alt="${title}">
+      <p>${description}</p>
+    `;
+    containerElement.appendChild(article);
+  });
+}
