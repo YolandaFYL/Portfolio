@@ -29,7 +29,6 @@ async function displayGitHubStats(username) {
     try {
       const githubData = await fetchGitHubData(username);
       profileStats.innerHTML = `
-        <h1>${githubData.name} GitHub Stats</h1>
         <dl>
           <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
           <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
