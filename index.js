@@ -1,4 +1,4 @@
-import { fetchJSON, renderProjects, fetchGithubData } from './global.js';
+import { fetchJSON, renderProjects, fetchGitHubData } from './global.js';
 
 async function loadLatestProjects() {
     try {
@@ -29,15 +29,15 @@ async function displayGitHubStats(username) {
     try {
       const githubData = await fetchGitHubData(username);
       profileStats.innerHTML = `
-        <h2>${githubData.name || githubData.login}</h2>
-        <img src="${githubData.avatar_url}" alt="${githubData.login}" width="100">
-        <dl style="display: grid; grid-template-columns: 1fr 1fr;">
+        <h2 class="stats-title">${githubData.name} GitHub Stats</h2>
+        <img src="${githubData.avatar_url}" alt="${githubData.login}" width='200'>
+        <dl class="stats-grid">
           <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
           <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
           <dt>Followers:</dt><dd>${githubData.followers}</dd>
           <dt>Following:</dt><dd>${githubData.following}</dd>
         </dl>
-      `;
+        `;
     } catch (error) {
       profileStats.innerHTML = `<p>Error loading GitHub stats: ${error.message}</p>`;
     }
