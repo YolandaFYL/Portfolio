@@ -14,7 +14,7 @@ h1 {
 }
 
 h2, h3 {
-  border-bottom: 2px solid;
+  border-bottom: none;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
@@ -109,6 +109,12 @@ form button {
   max-width: 100ch;
   margin-inline: auto;
   padding: 5ch;
+}
+
+.resume-wrapper h2 {
+  border-bottom: 2px solid;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .contact-info {
