@@ -1,4 +1,5 @@
-import { fetchJSON, renderProjects} from './global.js';
+import { fetchJSON, renderProjects, fetchGithubData } from './global.js';
+
 async function loadLatestProjects() {
     try {
         const projects = await fetchJSON('./Lib/projects.json');
@@ -18,3 +19,28 @@ async function loadLatestProjects() {
     }
 }
 loadLatestProjects();
+
+async function displayGitHubStats(username) {
+    const profileStats = document.querySelector('#profile-stats');
+    if (!profileStats) {
+      console.error("Profile stats container not found!");
+      return;
+    }
+    try {
+      const githubData = await fetchGitHubData(username);
+      profileStats.innerHTML = `
+        <h2>${githubData.name || githubData.login}</h2>
+        <img src="${githubData.avatar_url}" alt="${githubData.login}" width="100">
+        <dl style="display: grid; grid-template-columns: 1fr 1fr;">
+          <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
+          <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
+          <dt>Followers:</dt><dd>${githubData.followers}</dd>
+          <dt>Following:</dt><dd>${githubData.following}</dd>
+        </dl>
+      `;
+    } catch (error) {
+      profileStats.innerHTML = `<p>Error loading GitHub stats: ${error.message}</p>`;
+    }
+  }
+displayGitHubStats('YolandaFYL');
+  
