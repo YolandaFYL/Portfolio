@@ -144,40 +144,25 @@ form button {
 }
 
 #profile-stats {
-  text-align: center;
-  margin: 40px auto;
-  max-width: 600px;
+  margin: auto;
 }
 
-.stats-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.stats-grid {
+dl {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 20px;
-  font-size: 18px;
-  color: #6b7280; 
-}
-
-.stats-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 dt {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   color: #9ca3af;
   text-transform: uppercase;
 }
 
 dd {
-  font-size: 32px;
+  text-align: left;
+  font-size: 26px;
   font-weight: bold;
   color: #000000;
   margin: 0;
