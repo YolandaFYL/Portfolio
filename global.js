@@ -97,7 +97,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
   project.forEach(project => {
     const article = document.createElement('article');
     const title = project.title || 'Untitled Project';
-    const imageSrc = project.image || 'default-image.jpg'; // Replace with a placeholder image
+    const imageSrc = project.image || 'default-image.jpg';   
     const description = project.description || 'No description available.';
     article.innerHTML = `
       <${headingLevel}>${title}</${headingLevel}>
