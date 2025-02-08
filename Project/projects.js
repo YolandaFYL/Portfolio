@@ -28,8 +28,16 @@ async function loadProjects() {
 loadProjects();
 
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
-let data = [1, 2, 3, 4, 5, 5];
-let sliceGenerator = d3.pie();
+let projects = await fetchJSON('../Lib/projects.json');
+let rolledData = d3.rollups(
+  projects,
+  (v) => v.length,
+  (d) => d.year,
+);
+let data = rolledData.map(([year, count]) => {
+    return { value: count, label: year };
+  });
+let sliceGenerator = d3.pie().value((d) => d.value);
 let arcData = sliceGenerator(data);
 let arcs = arcData.map((d) => arcGenerator(d));
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
@@ -38,5 +46,13 @@ arcs.forEach((arc, i) => {
        .append('path')
        .attr('d', arc)
        .attr('fill', colors(i))
+});
+
+let legend = d3.select('.legend');
+data.forEach((d, idx) => {
+    legend.append('li')
+          .attr('style', `--color:${colors(idx)}`)
+          .attr('class', 'legend-item')
+          .html(`<span class="swatch"></span> ${d.label} (${d.value})`);
 });
 

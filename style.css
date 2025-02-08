@@ -177,9 +177,48 @@ dd {
   margin-top: 5px;
 }
 
-#projects-pie-plot {
-  max-width: 20em;
-  margin-block: 2em;
+.container {
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+  justify-content: center;
+  max-width: 900px;
+  margin: 20px auto; 
+}
 
+#projects-pie-plot {
+  flex: 1 1 auto;
+  width: 100%; 
+  height: auto;
+  max-width: 40%;
+  margin-block: 2em;
   overflow: visible;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); 
+  gap: 12px;
+  list-style: none;
+  padding: 12px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  background-color: #f9f9f9;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 4px;
+  display: inline-block;
 }
