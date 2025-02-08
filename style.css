@@ -166,3 +166,20 @@ dd {
   font-weight: bold;
   color: #000000;
 }
+
+.project-details {
+  font-family: Baskerville, serif;
+}
+
+.project-year {
+  font-variant-numeric: oldstyle-nums;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
