@@ -6,6 +6,8 @@ const projectsTitle = document.querySelector('.projects-title');
 const searchInput = document.querySelector('.searchBar');
 
 let projects = [];
+let selectedIndex = -1;
+let filteredProjects = [];
 
 async function loadProjects() {
     try {
@@ -52,7 +54,6 @@ function renderPieChart(projects) {
     svg.selectAll('*').remove();
     let legend = d3.select('.legend');
     legend.selectAll('*').remove();
-    let selectedIndex = -1;
 
     arcData.forEach((d, i) => {
         svg.append('path')
@@ -73,7 +74,7 @@ function renderPieChart(projects) {
                 if (selectedIndex === -1) {
                     renderProjects(projects, projectsContainer, 'h2');
                 } else {
-                    let filteredProjects = projects.filter(p => p.year === d.data.label);
+                    filteredProjects = projects.filter(p => p.year === d.data.label);
                     renderProjects(filteredProjects, projectsContainer, 'h2');
                 }
             });
@@ -89,7 +90,8 @@ function renderPieChart(projects) {
 
 searchInput.addEventListener('input', (event) => {
     let query = event.target.value.toLowerCase();
-    let filteredProjects = projects.filter((project) => {
+    let currentData = selectedIndex === -1 ? projects : filteredProjects;
+    filteredProjects = currentData.filter((project) => {
         let values = Object.values(project).join('\n').toLowerCase();
         return values.includes(query);
     });
