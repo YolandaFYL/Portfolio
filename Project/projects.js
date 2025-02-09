@@ -1,11 +1,14 @@
 import { fetchJSON, renderProjects } from '../global.js';
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
+const projectsContainer = document.querySelector('.projects');
+const projectsTitle = document.querySelector('.projects-title');
+const searchInput = document.querySelector('.searchBar');
+
+let projects = await fetchJSON('../Lib/projects.json');
+
 async function loadProjects() {
     try {
-        const projects = await fetchJSON('../Lib/projects.json');
-        const projectsContainer = document.querySelector('.projects');
-        const projectsTitle = document.querySelector('.projects-title');
         if (!projectsContainer) {
             console.error("Projects container not found in the DOM.");
             return;
@@ -27,32 +30,40 @@ async function loadProjects() {
 }
 loadProjects();
 
-let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
-let projects = await fetchJSON('../Lib/projects.json');
-let rolledData = d3.rollups(
-  projects,
-  (v) => v.length,
-  (d) => d.year,
-);
-let data = rolledData.map(([year, count]) => {
-    return { value: count, label: year };
-  });
-let sliceGenerator = d3.pie().value((d) => d.value);
-let arcData = sliceGenerator(data);
-let arcs = arcData.map((d) => arcGenerator(d));
-let colors = d3.scaleOrdinal(d3.schemeTableau10);
-arcs.forEach((arc, i) => {
-    d3.select('svg')
-       .append('path')
-       .attr('d', arc)
-       .attr('fill', colors(i))
-});
+function renderPieChart(projects) {
+    if (!projects || projects.length === 0) {
+        console.error("No projects available to render pie chart.");
+        return;
+    }
+    let rolledData = d3.rollups(projects,(v) => v.length,(d) => d.year);
+    let data = rolledData.map(([year, count]) => ({ value: count, label: year }));
+    let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
+    let sliceGenerator = d3.pie().value((d) => d.value);
+    let arcData = sliceGenerator(data);
+    let colors = d3.scaleOrdinal(d3.schemeTableau10);
+    d3.select('svg').selectAll('*').remove();
+    arcData.forEach((d, i) => {
+        d3.select('svg').append('path')
+            .attr('d', arcGenerator(d))
+            .attr('fill', colors(i));
+    });
+    let legend = d3.select('.legend').html('');
+    data.forEach((d, idx) => {
+        legend.append('li')
+            .attr('style', `--color:${colors(idx)}`)
+            .attr('class', 'legend-item')
+            .html(`<span class="swatch"></span> ${d.label} (${d.value})`);
+    });
+}
+renderPieChart(projects);
 
-let legend = d3.select('.legend');
-data.forEach((d, idx) => {
-    legend.append('li')
-          .attr('style', `--color:${colors(idx)}`)
-          .attr('class', 'legend-item')
-          .html(`<span class="swatch"></span> ${d.label} (${d.value})`);
-});
 
+searchInput.addEventListener('input', (event) => {
+    let query = event.target.value.toLowerCase();
+    let filteredProjects = projects.filter((project) => {
+        let values = Object.values(project).join('\n').toLowerCase();
+        return values.includes(query);
+    });
+    renderProjects(filteredProjects, projectsContainer, 'h2');
+    renderPieChart(filteredProjects);
+});
