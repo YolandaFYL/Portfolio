@@ -70,6 +70,12 @@ function renderPieChart(projects) {
                     .attr('class', (_, idx) => (
                         idx === selectedIndex ? 'selected' : ''
                     ));
+                if (selectedIndex === -1) {
+                    renderProjects(projects, projectsContainer, 'h2');
+                } else {
+                    let filteredProjects = projects.filter(p => p.year === d.data.label);
+                    renderProjects(filteredProjects, projectsContainer, 'h2');
+                }
             });
     });
     
