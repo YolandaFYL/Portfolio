@@ -4,7 +4,12 @@
   color-scheme: light dark;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -13,7 +18,8 @@ h1 {
   font-size: 300%;
 }
 
-h2, h3 {
+h2,
+h3 {
   border-bottom: none;
   padding-bottom: 5px;
   margin-bottom: 15px;
@@ -178,18 +184,18 @@ dd {
 }
 
 .container {
-  display: flex; 
+  display: flex;
   align-items: center;
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
   max-width: 900px;
-  margin: 20px auto; 
+  margin: 20px auto;
   flex-wrap: wrap;
 }
 
-#projects-pie-plot{
+#projects-pie-plot {
   flex: 1 1 auto;
-  width: 100%; 
+  width: 100%;
   height: auto;
   max-width: 40%;
   margin-block: 2em;
@@ -198,13 +204,13 @@ dd {
 
 .legend {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   gap: 12px;
   list-style: none;
   padding: 12px;
   margin-top: 20px;
   border: 1px solid #ddd;
-  border-radius: 8px; 
+  border-radius: 8px;
   background-color: #f9f9f9;
   flex: 1;
 }
