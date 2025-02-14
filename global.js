@@ -9,6 +9,7 @@ let pages = [
   { url: 'Project/', title: 'Project' },
   { url: 'Resume/', title: 'Resume' },
   { url: 'Contact/', title: 'Contact' },
+  { url: 'Meta/', title: 'Meta' },
   { url: 'https://github.com/YolandaFYL', title: 'Github' },
 ];
 
