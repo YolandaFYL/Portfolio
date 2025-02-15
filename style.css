@@ -279,6 +279,15 @@ path {
   cursor: pointer;
 }
 
+.gridlines line {
+  stroke: #ddd;
+  stroke-opacity: 0.7;
+}
+
+.gridlines path {
+  display: none; 
+}
+
 /* Selected State */
 .selected {
   --color: oklch(60% 45% 0) !important;
@@ -304,7 +313,8 @@ dl.info {
   position: fixed;
   top: 1em;
   left: 1em;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: normal;
   z-index: 1000;
   backdrop-filter: blur(8px);
   transition: opacity 300ms ease, visibility 300ms ease;
@@ -325,9 +335,13 @@ circle:hover {
   transform: scale(1.5);
 }
 
+circle.selected {
+  fill: #ff6b6b;
+}
+
 @keyframes marching-ants {
   to {
-    stroke-dashoffset: -8; /* 5 + 3 */
+    stroke-dashoffset: -8;
   }
 }
 
@@ -339,7 +353,6 @@ circle:hover {
   animation: marching-ants 2s linear infinite;
 }
 
-/* Gridline Styling */
 .gridlines line {
   stroke: #ddd;
   stroke-opacity: 0.7;
@@ -347,4 +360,33 @@ circle:hover {
 
 .gridlines path {
   display: none;
+}
+
+.selection-count {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.breakdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px; 
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.breakdown-grid dt {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.breakdown-grid dd {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
 }
