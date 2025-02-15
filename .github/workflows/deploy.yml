@@ -46,6 +46,7 @@ jobs:
             chmod +x node_modules/.bin/elocuent
             
       - name: Run Elocuent
+        working-directory: ${{ github.workspace }}
         run: |
             npx elocuent -d . -o meta/loc.csv
 
