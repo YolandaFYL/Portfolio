@@ -6,10 +6,10 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: "", title: "Home" },
-  { url: "Project/", title: "Project" },
-  { url: "Resume/", title: "Resume" },
-  { url: "Contact/", title: "Contact" },
-  { url: "Meta/", title: "Meta" },
+  { url: "project/", title: "Project" },
+  { url: "resume/", title: "Resume" },
+  { url: "xontact/", title: "Contact" },
+  { url: "meta/", title: "Meta" },
   { url: "https://github.com/YolandaFYL", title: "Github" },
 ];
 
