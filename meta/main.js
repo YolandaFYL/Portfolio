@@ -50,7 +50,7 @@ function displayStats() {
     const dl = d3.select('#stats').append('dl').attr('class', 'stats');
 
     // Total Lines of Code
-    dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
+    dl.append('dt').html('Total Lines of code');
     dl.append('dd').text(data.length);
 
     // Total Commits
