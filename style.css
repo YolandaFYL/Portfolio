@@ -378,6 +378,14 @@ circle.selected {
   text-align: center;
 }
 
+.breakdown-grid dt,
+.breakdown-grid dd {
+  display: inline-block; 
+  font-weight: bold;
+  margin: 0 5px; 
+  white-space: nowrap; 
+}
+
 .breakdown-grid dt {
   font-size: 1.2rem;
   font-weight: bold;
