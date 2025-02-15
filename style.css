@@ -313,8 +313,6 @@ dl.info {
   position: fixed;
   top: 1em;
   left: 1em;
-  font-size: 12px;
-  font-weight: normal;
   z-index: 1000;
   backdrop-filter: blur(8px);
   transition: opacity 300ms ease, visibility 300ms ease;
@@ -323,6 +321,19 @@ dl.info {
 dl.info[hidden] {
   opacity: 0;
   visibility: hidden;
+}
+
+dl.info dt {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #6b7280; 
+}
+
+dl.info dd {
+  font-size: 14px;
+  font-weight: bold;
+  color: #111; 
 }
 
 circle {
