@@ -4,12 +4,15 @@
   color-scheme: light dark;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Typography & General Layout */
+body {
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 5ch;
+}
+
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -18,8 +21,7 @@ h1 {
   font-size: 300%;
 }
 
-h2,
-h3 {
+h2, h3 {
   border-bottom: none;
   padding-bottom: 5px;
   margin-bottom: 15px;
@@ -39,13 +41,7 @@ article h4 span.time-range {
   margin-left: 10px;
 }
 
-body {
-  font: 100%/1.5 system-ui;
-  max-width: 100ch;
-  margin-inline: auto;
-  padding: 5ch;
-}
-
+/* Navigation */
 body > nav {
   display: flex;
   margin-bottom: auto;
@@ -72,6 +68,7 @@ nav a:hover {
   padding-bottom: 0.1em;
 }
 
+/* Forms & Inputs */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -84,9 +81,7 @@ form > div {
   grid-column: 1 / -1;
 }
 
-form input,
-form textarea,
-form button {
+form input, form textarea, form button {
   font: inherit;
 }
 
@@ -94,6 +89,7 @@ form button {
   grid-column: 1 / -1;
 }
 
+/* Projects & Resume */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -137,6 +133,7 @@ form button {
   font-size: 0.95em;
 }
 
+/* Color Scheme Toggle */
 .color-scheme {
   position: absolute;
   top: 1rem;
@@ -149,6 +146,7 @@ form button {
   font-family: inherit;
 }
 
+/* Stats & Data Display */
 #profile-stats {
   margin: auto;
 }
@@ -173,6 +171,31 @@ dd {
   color: #000000;
 }
 
+.stats {
+  margin: 20px;
+  padding: 10px;
+}
+
+.stats dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  text-align: center;
+}
+
+.stats dt {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.stats dd {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* Project Details */
 .project-details {
   font-family: Baskerville, serif;
 }
@@ -183,6 +206,7 @@ dd {
   margin-top: 5px;
 }
 
+/* Scatterplot & Chart Styling */
 .container {
   display: flex;
   align-items: center;
@@ -202,6 +226,7 @@ dd {
   overflow: visible;
 }
 
+/* Legend */
 .legend {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
@@ -230,6 +255,7 @@ dd {
   display: inline-block;
 }
 
+/* Search Bar */
 .searchBar {
   display: block;
   width: 100%;
@@ -241,6 +267,7 @@ dd {
   outline: none;
 }
 
+/* SVG Path Hover Effect */
 &:has(path:hover) {
   path:not(:hover) {
     opacity: 0.5;
@@ -252,37 +279,72 @@ path {
   cursor: pointer;
 }
 
+/* Selected State */
 .selected {
   --color: oklch(60% 45% 0) !important;
-  &:is(path) {
-    fill: var(--color);
-  }
-  &:is(li) {
-    font-weight: bold;
-    opacity: 1;
-  }
 }
 
-.stats {
-  margin: 20px;
-  padding: 10px;
+.selected:is(path) {
+  fill: var(--color);
 }
 
-.stats dl {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-  text-align: center;
-}
-
-.stats dt {
-  font-size: 14px;
+.selected:is(li) {
   font-weight: bold;
-  text-transform: uppercase;
+  opacity: 1;
 }
 
-.stats dd {
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 16px;
-  color: #000000;
+dl.info {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  font-size: 14px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+dl.info[hidden] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle {
+  transition: transform 200ms ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+/* Gridline Styling */
+.gridlines line {
+  stroke: #ddd;
+  stroke-opacity: 0.7;
+}
+
+.gridlines path {
+  display: none;
 }
