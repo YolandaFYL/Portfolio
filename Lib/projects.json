@@ -1,5 +1,11 @@
 [
   {
+    "title": "Bike Traffic in Boston area",
+    "year": "2025",
+    "image": "../images/bikewatching.jpg",
+    "description": " visualize bike traffic in the Boston area"
+  },
+  {
     "title": "Kid Centric Recipe Analysis",
     "year": "2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -16,12 +22,6 @@
     "year": "2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Creating my own website from scratch."
-  },
-  {
-    "title": "Magnam quod labore consequatur!",
-    "year": "2025",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Quae fuga tempora unde delectus nam voluptates? Ex voluptatibus, ducimus obcaecati eligendi ab maxime consequuntur assumenda ad explicabo aperiam commodi et veniam iure, voluptas, hic sapiente ut. Delectus, error ut?"
   },
   {
     "title": "Rerum, qui! Accusantium, at?",
